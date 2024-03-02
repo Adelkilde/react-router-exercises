@@ -21,7 +21,10 @@ export default function Recipe() {
           </h3>
           <div style={{ display: "flex" }}>
             <img style={{ width: 200, margin: 10, flexDirection: "column" }} src={recipe.thumb} alt={recipe.name} />
-            <p style={{ display: "inline", flexDirection: "column" }}>{recipe.ingredients.toString()}</p>
+            <p style={{ display: "inline", flexDirection: "column" }}>
+              <strong>Ingredients: </strong>
+              {recipe.ingredients}
+            </p>
           </div>
           <hr />
           <p style={{ whiteSpace: "pre-wrap" }}>{recipe.instructions}</p>
