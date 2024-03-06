@@ -10,8 +10,6 @@ export const Categories = () => {
   return (
     <>
       <h2>Categories</h2>
-      <p>Browse recipes by category.</p>
-
       <ul>
         {categories?.map((category) => (
           <li key={category}>

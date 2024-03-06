@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Categories } from "./recipes/Categories";
 import Recipe from "./recipes/Recipe";
-import Recipes from "./recipes/RecipeList";
+// import Recipes from "./recipes/RecipeList";
 import RecipeForm from "./recipes/RecipeForm";
 import Login from "./security/Login";
 import Logout from "./security/Logout";
@@ -13,6 +13,7 @@ import Contact from "./Contact";
 import RecipesLayout from "./recipes/RecipesLayout";
 import NotFound from "./NotFound";
 import RequireAuth from "./security/RequireAuth";
+import AdminCategories from "./recipes/AdminCategories";
 
 export default function App() {
   const auth = useAuth();
@@ -29,8 +30,16 @@ export default function App() {
         <Route
           path="/add"
           element={
-            <RequireAuth roles={["ADMIN"]}>
+            <RequireAuth roles={["USER", "ADMIN"]}>
               <RecipeForm />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/addCategory"
+          element={
+            <RequireAuth roles={["ADMIN"]}>
+              <AdminCategories />
             </RequireAuth>
           }
         />

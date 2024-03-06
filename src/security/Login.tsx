@@ -12,6 +12,7 @@ const Login = () => {
   const auth = useAuth();
 
   const [err, setErr] = useState(null);
+  console.log(err);
 
   const from = location.state?.from?.pathname || "/";
 
